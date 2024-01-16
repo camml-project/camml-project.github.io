@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="CaMML">
+  <meta name="keywords" content="GPT-4, open-source, vision-language">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CaMML</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <link rel="shortcut icon" href="path/to/favicon.ico" type="image/x-icon">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  </head>
+
+  <style>
+
+    #main{
+        position: relative;;
+        width: 1200px;
+    }
+
+    .box{
+        float: left;
+        padding: 15px 0 0 15px;
+/*        background-color: red;*/
+    }
+
+    .pic{
+        width: 500px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    .pic img{
+        width: 500px;
+    }
+
+  </style>
+
+  <body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><img id="logo" width="5%" src="images/camml_logo.jpg"> CaMML:</h1>
+          <h2 class="title is-2 publication-title">Context-Aware Multimodal Learner for Large Models</h2>
+          <div class="is-size-5">
+            <span class="author-block">
+                <a href="https://yix-chen.github.io/" style="color:#008AD7;font-weight:normal;">Yixin Chen*<sup></sup></a>,
+            </span>
+
+            <span class="author-block">
+              <a href="https://shuaizhang.tech/" style="color:#008AD7;font-weight:normal;">Shuai Zhang*<sup></sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="https://boranhan.github.io/" style="color:#008AD7;font-weight:normal;">Boran Han<sup></sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="https://hetong007.github.io/" style="color:#008AD7;font-weight:normal;">Tong He<sup></sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="https://cs.uchicago.edu/people/bo-li/" style="color:#008AD7;font-weight:normal;">Bo Li<sup></sup></a>,
+            </span>
+
+            
+          </div>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b> The Chinese University of Hong Kong </span>
+            <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b> Amazon Web Services </span>
+            <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b> University of Chicago </span>
+          </div>
+
+          <br>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              
+              
+              <span class="link-block">
+                <a href="https://github.com/yix-chen/camml" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              
+              <span class="link-block">
+                <a href="https://github.com/yix-chen/camml#demo" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fa fa-laugh"></i>
+                  </span>
+                  <span>Demo</span>
+                  </a>
+              </span>
+
+              <span class="link-block">
+                      <a href="https://github.com/yix-chen/camml#camml-models" target="_blank"
+                         class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        🤗
+                      </span>
+                      <span>Models</span>
+                    </a>
+                  </span>
+
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2401.03149" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            <strong><font>Updates</font></strong>: CaMML is comming! We release the paper, code, data, models, and demo.
+            <br>
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <div align="center">
+<iframe
+  id="gradio"
+	src="http://103.170.5.190:7864/"
+	frameborder="0"
+	width="1300"
+	height="2300"
+></iframe>
+</div> -->
+
+<link rel="stylesheet" type="text/css" href="js/simple_style.css" />
+<script type="text/javascript" src="js/simple_swiper.js"></script>
+
+<section class="section">
+  <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+          <p>
+            In this work, we introduce Context-Aware MultiModal Learner (CaMML), for tuning large multimodal models (LMMs).
+            CaMML, a lightweight module, is crafted to seamlessly integrate multimodal contextual samples into large models,
+            thereby empowering the model to derive knowledge from analogous, domain-specific, up-to-date information and make grounded inferences.
+            Importantly, CaMML is highly scalable and can efficiently handle lengthy multimodal context examples owing to its hierarchical design.
+            Based on CaMML, we have developed two multimodal models, CaMML-7B and CaMML-13B, that have shown exceptional performance across an array of benchmark datasets for multimodal tasks.
+            Remarkably, CaMML-13B achieves the state-of-the-art performance on over ten widely recognized multimodal benchmark datasets, surpassing LLaVA-1.5 (13B) with a noticeable margin, without integration of any external resources.
+            Moreover, we have conducted extensive ablative studies to inspect the inner workings of CaMML and performed qualitative analyses to showcase its effectiveness in handling real-world challenging cases.
+          </p>
+          </div>
+      </div>
+      </div>
+      <br>
+      <br>
+
+<!-- Paper Model. -->
+<div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">Model</h2>
+      <div class="content has-text-justified">
+        <p>
+          CaMML framework, which consists of retriever, perceiver and generator. Once receiving user query q, CaMML retriever
+          identifies relevant multimodal contexts C from datastore, then CaMML Perceiver seamlessly integrates various modalities, effectively
+          encodeing long-context information and injecting it into the CaMML generator. This allows for the prediction of responses that are
+          conditioned on both the context and the query q.
+        </p>
+      </div>  
+      <img id="model" width="100%" src="images/framework_v4.jpg">
+      </h3>   
+    </div>
+  </div>
+
+    <!-- Performance. -->
+<div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">Performance</h2>
+      <div class="content has-text-justified">
+        <p>
+          CaMML achieves the state-of-the-art performance on
+          a number of multimodal benchmarks, outperforming LLaVA-1.5
+          and many other large multimodal models.
+        </p>
+      </div>
+      <img id="performance" width="100%" src="images/performance_radar_text.jpg">
+      </h3>
+    </div>
+  </div>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+@misc{camml,
+      title={CaMML: Context-Aware Multimodal Learner for Large Models},
+      author={Yixin Chen and Shuai Zhang and Boran Han and Tong He and Bo Li},
+      year={2024},
+      eprint={2401.03149},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+  </code></pre>
+    </div>
+  </section>
+  
+
+
+
+<section class="section">
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3">Examples</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script src="js/Underscore-min.js"></script>
+<script src="js/index.js"></script>
+
+<!-- <section class="section"> -->
+  <div class="columns is-centered has-text-centered">
+    <div id="main">
+      <img src="images/demo_context_aware.jpg" width="95%" alt="">
+      <br><br>
+      <img src="images/demo_sequences.jpg" width="95%" alt="">
+      <br><br>
+      <img src="images/demo_hallucination.jpg" width="95%" alt="">
+      <br><br>
+      <img src="images/demo_image_generation1.jpg" width="95%" alt="">
+      <br><br>
+      <img src="images/demo_localization.jpg" width="95%" alt="">
+
+    </div>
+    
+</section>
+
+
+    
+
+</body>
+
+</html>
